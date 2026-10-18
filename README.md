@@ -32,10 +32,11 @@ Create a production bundle with `npm run build`; preview it locally with `npm ru
 1. Create a GitHub repository and push this project, including `package.json`, `public/`, `src/`, `index.html`, and `vite.config.js`.
 2. In Render, create a **Static Site** and connect the repository.
 3. Set the build command to `npm install && npm run build`.
-4. Set the publish directory to `dist`.
-5. Deploy. The `public/_redirects` file is copied to the published root and provides the SPA fallback (`/* /index.html 200`). Do not add a separate conflicting rewrite rule.
+4. Set the build command to `npm ci && npm run build` and the publish directory to `dist`.
+5. Add one rewrite rule: source `/*`, destination `/index.html`. This lets React Router serve nested routes on refresh.
+6. Deploy. Alternatively, create a Render Blueprint from the included root `render.yaml`; it defines the same static site and SPA rewrite rule.
 
-There is no server start command. The output in `dist/` is the complete deployable app. Vite serves the app from the site root; React Router handles unknown routes with the custom 404 screen after the host fallback serves `index.html`.
+There is no server start command. The output in `dist/` is the complete deployable app. Vite serves the app from the site root; React Router handles unknown routes with the custom 404 screen after Render's rewrite serves `index.html`.
 
 ## Metrics
 
