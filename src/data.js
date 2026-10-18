@@ -7,4 +7,16 @@ export const passages={
   DSA:{Beginner:'A list stores items in a useful order.',Intermediate:'Choosing the right data structure can make common operations faster and simpler.',Advanced:'A balanced search tree maintains logarithmic operations by preserving structural invariants.',Expert:'Asymptotic analysis describes growth, while memory locality and constant factors still determine real-world performance.'},
   Science:{Beginner:'Careful observation helps us ask better questions about the world.',Intermediate:'A useful experiment changes one factor while measuring a clear outcome.',Advanced:'Scientific models simplify reality, but their predictions can be tested against repeatable evidence.',Expert:'Strong explanations connect observations to mechanisms, expose uncertainty, and remain open to revision when new evidence appears.'}
 };
-export const categories=Object.keys(passages);export const achievements=[['first','First Test','Complete your first typing test'],['30','30 WPM','Reach 30 net WPM'],['50','50 WPM','Reach 50 net WPM'],['80','80 WPM','Reach 80 net WPM'],['95','95% Accuracy','Reach 95% accuracy'],['perfect','Perfect Accuracy','Complete a test at 100% accuracy'],['five','Five Tests','Complete five tests'],['ten','Ten Tests','Complete ten tests'],['q1','Round 1 Qualified','Qualify for round 2'],['q2','Round 2 Qualified','Qualify for round 3'],['finalist','Finalist','Qualify for the grand final'],['champ','Champion','Win the local competition']];
+export const categories=Object.keys(passages);
+export const handDrillKeys={left:'QWERTASDFGZXCVB',right:'YUIOPHJKLNM'};
+const handDrillWords={
+  left:['we','west','tree','street','rest','red','read','feed','free','after','fast','faster','safe','great','water','bread','brave','serve','face','craft','start','test','best','better','bar','far','wave','ever','taste','staff','draft','vast','set','web','extra','weave','fate','dear','fear','gear','star','trade','wear'],
+  right:['you','yoyo','yup','upon','union','minimum','moon','noon','noun','him','hip','hippo','hook','look','pool','loop','plum','jump','jumpy','join','joy','jolly','holly','lull','lump','milk','mink','pink','pony','polyp','pupil','puppy','ill','inn','hum','hymn','honk','honky','only','ion','imp','opinion','oil','pin','yolk','lily','link','pink']
+};
+export function handDrillPassage(hand,round=1){
+  const words=handDrillWords[hand]||handDrillWords.left;
+  const offset=(Math.max(1,Number(round)||1)-1)*10;
+  const chosen=Array.from({length:Math.min(16,8+Math.max(1,Number(round)||1)*2)},(_,i)=>words[(offset+i)%words.length]);
+  return `${chosen.join(' ')}.`;
+}
+export const achievements=[['first','First Test','Complete your first typing test'],['30','30 WPM','Reach 30 net WPM'],['50','50 WPM','Reach 50 net WPM'],['80','80 WPM','Reach 80 net WPM'],['95','95% Accuracy','Reach 95% accuracy'],['perfect','Perfect Accuracy','Complete a test at 100% accuracy'],['five','Five Tests','Complete five tests'],['ten','Ten Tests','Complete ten tests'],['q1','Round 1 Qualified','Qualify for round 2'],['q2','Round 2 Qualified','Qualify for round 3'],['finalist','Finalist','Qualify for the grand final'],['champ','Champion','Win the local competition']];

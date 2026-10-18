@@ -22,3 +22,23 @@ button.choice{appearance:none;background:#191b30;color:#d2d2e2;border-color:#fff
 .light .race-control-copy b{color:#292442}
 .light .race-control-copy small{color:#635e79}
 @media(max-width:560px){.race-control-bar{align-items:stretch;flex-direction:column;gap:12px}.race-start{width:100%;min-height:48px}}
+
+/* One-hand typing drills and live keyboard map. */
+.focus-options{gap:8px}
+.hand-drill-preview{display:grid;grid-template-columns:minmax(290px,1.2fr) minmax(200px,.8fr);align-items:center;gap:22px;margin-top:16px;padding:18px;border:1px solid #ffffff13;border-radius:10px;background:linear-gradient(115deg,#14162a,#0e1020)}
+.hand-keyboard{min-width:0}
+.hand-label{display:inline-block;width:50%;margin-bottom:10px;color:#8e90a8;font:9px 'DM Mono';letter-spacing:.12em}
+.right-label{text-align:right}
+.key-row{display:flex;justify-content:center;gap:5px;margin-top:5px}
+.keycap{display:grid;place-items:center;width:30px;height:32px;border:1px solid #ffffff1a;border-bottom-width:3px;border-radius:6px;background:#1a1c30;color:#7f829b;font:600 10px 'DM Mono';transition:all .2s ease}
+.keycap-active-left{background:#322553;border-color:#9b76ff;color:#d2c2ff;box-shadow:0 0 12px #835fff30}
+.keycap-active-right{background:#12313c;border-color:#4dcfe8;color:#a9f3ff;box-shadow:0 0 12px #4dcfe830}
+.hand-drill-copy b{font:600 15px 'Space Grotesk';color:#f0edff}
+.hand-drill-copy p{margin:7px 0 11px;color:#9b9db3;font-size:11px;line-height:1.6}
+.hand-drill-copy>span{color:#b6a4ff;font:9px/1.8 'DM Mono';letter-spacing:.03em}
+.light .hand-drill-preview{background:linear-gradient(115deg,#f7f4ff,#fff);border-color:#21183b18}
+.light .hand-drill-copy b{color:#292442}
+.light .keycap{background:#eceaf5;color:#66617a;border-color:#d7d2e8}
+.light .keycap-active-left{background:#e5dcff;border-color:#8162dc;color:#453477}
+.light .keycap-active-right{background:#d9f7fb;border-color:#1993a4;color:#145e69}
+@media(max-width:700px){.hand-drill-preview{grid-template-columns:1fr;gap:16px;padding:14px}.key-row{gap:4px}.keycap{width:min(8vw,30px);height:30px}.hand-drill-copy>span{font-size:8px}.focus-options .choice{flex:1 1 150px}}
