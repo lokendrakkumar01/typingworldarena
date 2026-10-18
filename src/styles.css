@@ -42,3 +42,14 @@ button.choice{appearance:none;background:#191b30;color:#d2d2e2;border-color:#fff
 .light .keycap-active-left{background:#e5dcff;border-color:#8162dc;color:#453477}
 .light .keycap-active-right{background:#d9f7fb;border-color:#1993a4;color:#145e69}
 @media(max-width:700px){.hand-drill-preview{grid-template-columns:1fr;gap:16px;padding:14px}.key-row{gap:4px}.keycap{width:min(8vw,30px);height:30px}.hand-drill-copy>span{font-size:8px}.focus-options .choice{flex:1 1 150px}}
+
+.keyboard-first-notice{display:flex;flex-direction:column;gap:6px;margin:-14px 0 18px;padding:13px 17px;border:1px solid #4dcfe834;border-radius:9px;background:linear-gradient(100deg,#12313c70,#17162a)}
+.keyboard-first-notice span{color:#71dcec;font:9px 'DM Mono';letter-spacing:.12em}
+.keyboard-first-notice b{color:#e7e7f3;font:500 13px 'Space Grotesk'}
+.warmup-transition{border-color:#4dcfe844}
+.warmup-transition .transition-copy h2{color:#f0edff}
+.warmup-check{width:48px;height:48px;flex:0 0 auto;display:grid;place-items:center;border-radius:50%;border:1px solid #59ddaf77;background:#59ddaf16;color:#6ce7bd;font:600 24px 'Space Grotesk';box-shadow:0 0 22px #59ddaf22}
+.light .keyboard-first-notice{background:linear-gradient(100deg,#e6faff,#f8f6ff);border-color:#188ea544}
+.light .keyboard-first-notice b,.light .warmup-transition .transition-copy h2{color:#292442}
+@media(max-width:800px){.warmup-transition{flex-wrap:wrap}.warmup-transition .transition-copy{flex:1 1 calc(100% - 70px)}}
+@media(max-width:520px){.warmup-transition .warmup-check{width:42px;height:42px}.warmup-transition .btn{width:100%}}
