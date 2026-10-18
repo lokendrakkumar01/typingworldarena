@@ -1,0 +1,5 @@
+const KEY='typearena:v1';const blank={profile:{name:'Player',avatar:'⚡',theme:'dark',goal:10},history:[],competition:null,achievements:[]};
+export function load(){try{const v=JSON.parse(localStorage.getItem(KEY)||'null');if(v&&v.version===1&&v.data)return {...blank,...v.data};}catch{}return structuredClone(blank)}
+export function save(data){try{localStorage.setItem(KEY,JSON.stringify({version:1,data}));return true}catch{return false}}
+export function download(name,content,type){const url=URL.createObjectURL(new Blob([content],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+export const rounds=[{name:'Qualifier',duration:60,difficulty:'Beginner',threshold:20,accuracy:85},{name:'Intermediate',duration:60,difficulty:'Intermediate',threshold:30,accuracy:88},{name:'Advanced',duration:90,difficulty:'Advanced',threshold:40,accuracy:90},{name:'Grand Final',duration:120,difficulty:'Expert',threshold:0,accuracy:0}];
